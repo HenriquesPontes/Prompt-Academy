@@ -92,7 +92,7 @@ export default function TechStackGuidePage() {
               A Beginner's Guide to Vibe Coding & Modern Web Dev
             </h1>
             <p className="text-xl text-chrome-text-soft font-serif italic border-l-4 border-accent pl-6 py-2">
-              "Welcome to the beginner-friendly guide to building modern software using AI. This document explains the concept of 'vibe coding,' breaks down the tools you need, and translates complex technical jargon into plain English."
+              "Welcome to the beginner-friendly guide to build modern software using AI. This document explains the concept of 'vibe coding,' breaks down the tools you need, and translates complex technical jargon into plain English."
             </p>
           </div>
 
