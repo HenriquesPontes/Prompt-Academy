@@ -123,10 +123,12 @@ export default function PlayPromptAcademyPage() {
         </Link>
         <div className="flex items-center gap-4">
           <Link 
-            href="#" 
+            href="https://calendly.com/hpontes-31" 
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:flex text-sm font-medium bg-accent text-paper px-4 py-1.5 rounded-full hover:bg-accent-deep-green transition-colors items-center gap-2 shadow-sm"
           >
-            Book 1:1 Call
+            Book a Call
           </Link>
           <button 
             onClick={() => setIsGlossaryOpen(true)}

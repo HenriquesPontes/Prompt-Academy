@@ -57,10 +57,12 @@ export default function TechStackGuidePage() {
           <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
         </Link>
         <Link 
-          href="#" 
+          href="https://calendly.com/hpontes-31" 
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm"
         >
-          Book 1:1 Call
+          Book a Call
         </Link>
       </header>
 
