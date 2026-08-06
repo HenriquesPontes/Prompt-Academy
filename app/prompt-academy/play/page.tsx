@@ -122,6 +122,12 @@ export default function PlayPromptAcademyPage() {
           <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
         </Link>
         <div className="flex items-center gap-4">
+          <Link 
+            href="#" 
+            className="hidden md:flex text-sm font-medium bg-accent text-paper px-4 py-1.5 rounded-full hover:bg-accent-deep-green transition-colors items-center gap-2 shadow-sm"
+          >
+            Book 1:1 Call
+          </Link>
           <button 
             onClick={() => setIsGlossaryOpen(true)}
             className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-chrome-bg border border-hairline text-sm font-medium hover:bg-accent/10 hover:text-accent transition-colors"

@@ -15,6 +15,12 @@ export default function Home() {
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
         </Link>
+        <Link 
+          href="#" 
+          className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm"
+        >
+          Book 1:1 Call
+        </Link>
       </header>
 
       {/* Main Content */}

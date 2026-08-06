@@ -47,13 +47,21 @@ export default function PromptsGuidePage() {
   return (
     <div className="min-h-screen bg-paper text-ink selection:bg-selection font-sans">
       {/* Header */}
-      <header className="absolute top-0 left-0 right-0 h-16 z-50 flex items-center px-10 justify-between">
+      <header className="absolute top-0 left-0 right-0 h-16 z-50 flex items-center px-10 justify-between bg-chrome-bg/80 backdrop-blur-sm border-b border-hairline sticky">
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
         </Link>
-        <Link href="/tech-stack" className="text-sm font-medium text-chrome-text hover:text-ink transition-colors flex items-center gap-2">
-           <ArrowRight className="w-4 h-4 rotate-180" /> Back to Beginner's Guide
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link href="/tech-stack" className="text-sm font-medium text-chrome-text hover:text-ink transition-colors flex items-center gap-2">
+             <ArrowRight className="w-4 h-4 rotate-180" /> Back to Beginner's Guide
+          </Link>
+          <Link 
+            href="#" 
+            className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm"
+          >
+            Book 1:1 Call
+          </Link>
+        </div>
       </header>
 
       <main className="max-w-7xl mx-auto pt-32 pb-32 px-6 flex flex-col lg:flex-row gap-12 relative z-10">
