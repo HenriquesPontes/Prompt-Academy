@@ -128,7 +128,7 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
       </div>
 
       <div className="space-y-4">
-        <h3 className="font-serif font-medium text-ink mb-4 border-b border-hairline pb-2">Analysis Log</h3>
+        <h3 className="font-serif font-medium text-ink mb-4 border-b border-hairline pb-2">Explanation</h3>
         
         {NODES.map((node, i) => (
           <div key={node.id} className="min-h-[80px]">
