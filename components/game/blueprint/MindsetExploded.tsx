@@ -37,6 +37,7 @@ const NODES: ExplodedNode[] = [
 
 export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
   const [exploded, setExploded] = useState<Record<string, boolean>>({});
+  const [hasStarted, setHasStarted] = useState(false);
 
   const toggleNode = (id: string) => {
     setExploded(prev => {
@@ -56,12 +57,26 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
         <h2 className="text-2xl font-serif text-accent mb-2 flex items-center gap-2">
           <Zap className="text-warning" /> The Mindset Shift
         </h2>
-        <p className="font-mono text-sm text-ink-soft">
+        <p className="font-mono text-sm text-ink-soft leading-relaxed">
           Beginners write wishes. Pros write specs. Click the highlighted vague words in the beginner prompt below to "explode" them into a professional spec.
         </p>
       </div>
 
-      <div className="relative p-4 md:p-6 rounded-lg bg-chrome-bg border border-hairline font-mono text-base leading-loose mb-6 md:mb-8 text-ink">
+      {!hasStarted ? (
+        <div className="flex justify-center py-8 border border-dashed border-hairline rounded-lg bg-chrome-bg/50">
+          <button 
+            onClick={() => setHasStarted(true)}
+            className="px-6 py-3 bg-accent text-paper font-mono text-sm uppercase tracking-wider font-semibold rounded-lg hover:bg-accent-deep-green transition-colors flex items-center gap-2"
+          >
+            I'm Ready to Start <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      ) : (
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <div className="relative p-4 md:p-6 rounded-lg bg-chrome-bg border border-hairline font-mono text-base leading-loose mb-6 md:mb-8 text-ink">
         <span>I want you to build </span>
         
         {/* Node 1 */}
@@ -167,6 +182,8 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
           </motion.div>
         )}
       </AnimatePresence>
+        </motion.div>
+      )}
     </div>
   );
 }
