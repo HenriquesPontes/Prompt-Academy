@@ -84,8 +84,8 @@ export function LivePromptBuilder({ onComplete }: { onComplete: () => void }) {
   };
 
   return (
-    <div className="border-2 border-hairline bg-paper rounded-xl p-8 shadow-sm">
-      <div className="text-center mb-10 pb-6 border-b border-dashed border-hairline relative overflow-hidden">
+    <div className="border-2 border-hairline bg-paper rounded-xl p-5 md:p-8 shadow-sm">
+      <div className="text-center mb-8 md:mb-10 pb-6 border-b border-dashed border-hairline relative overflow-hidden">
         <h2 className="text-3xl font-serif text-accent mb-3 flex items-center justify-center gap-3">
           <Terminal className="text-warning w-8 h-8" /> Final Boss: The Compiler
         </h2>
@@ -94,7 +94,7 @@ export function LivePromptBuilder({ onComplete }: { onComplete: () => void }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
         {/* Left Side: Blocks */}
         <div className="space-y-8">
           <div className="flex items-center justify-between mb-2">

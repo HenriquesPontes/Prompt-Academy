@@ -141,7 +141,7 @@ export default function PlayPromptAcademyPage() {
       </header>
 
       {/* Main Content */}
-      <main className="pt-32 pb-32 px-6 max-w-4xl mx-auto relative z-10">
+      <main className="pt-24 pb-24 px-4 md:px-6 md:pt-32 md:pb-32 max-w-4xl mx-auto relative z-10">
         
         {/* Timeline Path (Visual) */}
         <div className="absolute left-6 md:left-[50px] top-[100px] bottom-[200px] w-0.5 border-l-2 border-dashed border-hairline -z-10 hidden md:block" />
@@ -182,7 +182,7 @@ export default function PlayPromptAcademyPage() {
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-24 pt-16 border-t-2 border-dashed border-hairline relative pl-0 md:pl-12"
+            className="mt-16 md:mt-24 pt-12 md:pt-16 border-t-2 border-dashed border-hairline relative pl-0 md:pl-12"
           >
              <div className="absolute -left-12 top-24 w-6 h-6 rounded-full border-2 hidden md:flex items-center justify-center bg-paper z-10 transition-colors duration-500"
                    style={{ borderColor: '#2D5F4A' }}>

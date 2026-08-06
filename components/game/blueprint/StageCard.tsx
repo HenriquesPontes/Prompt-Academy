@@ -39,7 +39,7 @@ export function StageCard({ stage, isUnlocked, onComplete }: Props) {
 
   if (!isUnlocked) {
     return (
-      <div className="relative border-2 border-dashed border-hairline bg-paper/50 rounded-xl p-8 opacity-50 flex flex-col items-center justify-center min-h-[200px]">
+      <div className="relative border-2 border-dashed border-hairline bg-paper/50 rounded-xl p-5 md:p-8 opacity-50 flex flex-col items-center justify-center min-h-[160px] md:min-h-[200px]">
         <Lock className="w-8 h-8 text-chrome-text-soft mb-3" />
         <h3 className="text-ink font-medium font-serif text-xl mb-1">Stage {stage.id}: Locked</h3>
         <p className="text-sm text-chrome-text-soft">Complete previous stages to unlock</p>
@@ -51,7 +51,7 @@ export function StageCard({ stage, isUnlocked, onComplete }: Props) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`border-2 rounded-xl p-8 shadow-sm transition-colors ${
+      className={`border-2 rounded-xl p-5 md:p-8 shadow-sm transition-colors ${
         isCompleted ? "border-success/30 bg-success/5" : "border-ink/10 bg-paper hover:border-ink/20"
       }`}
     >
@@ -71,7 +71,7 @@ export function StageCard({ stage, isUnlocked, onComplete }: Props) {
         {stage.lesson}
       </div>
 
-      <div className="bg-chrome-bg rounded-lg p-6 border border-hairline relative">
+      <div className="bg-chrome-bg rounded-lg p-4 md:p-6 border border-hairline relative">
         <h3 className="font-semibold text-ink mb-4 font-mono text-sm flex items-center gap-2">
           <Hammer className="w-4 h-4 text-accent" /> Fix this prompt
         </h3>

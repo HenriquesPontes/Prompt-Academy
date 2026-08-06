@@ -51,8 +51,8 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
   const isFullyExploded = Object.keys(exploded).length === NODES.length;
 
   return (
-    <div className="border-2 border-hairline bg-paper rounded-xl p-8 shadow-sm">
-      <div className="mb-8">
+    <div className="border-2 border-hairline bg-paper rounded-xl p-5 md:p-8 shadow-sm">
+      <div className="mb-6 md:mb-8">
         <h2 className="text-2xl font-serif text-accent mb-2 flex items-center gap-2">
           <Zap className="text-warning" /> The Mindset Shift
         </h2>
@@ -61,7 +61,7 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
         </p>
       </div>
 
-      <div className="relative p-6 rounded-lg bg-chrome-bg border border-hairline font-mono text-base leading-loose mb-8 text-ink">
+      <div className="relative p-4 md:p-6 rounded-lg bg-chrome-bg border border-hairline font-mono text-base leading-loose mb-6 md:mb-8 text-ink">
         <span>I want you to build </span>
         
         {/* Node 1 */}
@@ -116,14 +116,14 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
         <h3 className="font-serif font-medium text-ink mb-4 border-b border-hairline pb-2">Analysis Log</h3>
         
         {NODES.map((node, i) => (
-          <div key={node.id} className="h-[80px]">
+          <div key={node.id} className="min-h-[80px]">
             <AnimatePresence>
               {exploded[node.id] ? (
                 <motion.div 
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="flex gap-4 p-4 rounded-lg border border-success/20 bg-success/5 items-start"
+                  className="flex gap-3 p-3 md:gap-4 md:p-4 rounded-lg border border-success/20 bg-success/5 items-start"
                 >
                   <div className="mt-0.5 flex-shrink-0">{node.icon}</div>
                   <div>
@@ -136,7 +136,7 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
                   </div>
                 </motion.div>
               ) : (
-                <div className="flex gap-4 p-4 rounded-lg border border-dashed border-hairline bg-paper items-center justify-center h-full opacity-70">
+                <div className="flex gap-3 p-3 md:gap-4 md:p-4 rounded-lg border border-dashed border-hairline bg-paper items-center justify-center h-full opacity-70">
                   <span className="font-mono text-xs text-ink-soft">Explode node {i + 1} to analyze...</span>
                 </div>
               )}
