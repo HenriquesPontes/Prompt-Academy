@@ -81,6 +81,12 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
         
         {/* Node 1 */}
         <span className="relative inline-block mx-1">
+          {!exploded["vague1"] && Object.keys(exploded).length === 0 && (
+            <span className="absolute -top-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce pointer-events-none z-10">
+              <span className="bg-accent text-paper text-[10px] font-mono font-bold px-2 py-0.5 rounded-full shadow-sm whitespace-nowrap">Click me</span>
+              <div className="w-0 h-0 border-l-[4px] border-l-transparent border-t-[4px] border-t-accent border-r-[4px] border-r-transparent" />
+            </span>
+          )}
           <button 
             onClick={() => toggleNode("vague1")}
             className={`px-2 py-0.5 rounded transition-all duration-300 ${
