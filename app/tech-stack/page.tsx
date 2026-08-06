@@ -75,6 +75,11 @@ export default function TechStackGuidePage() {
                 </button>
               ))}
             </nav>
+            <div className="mt-12 pt-8 border-t border-hairline">
+              <Link href="/tech-stack/prompts" className="flex items-center gap-2 text-sm font-bold text-accent hover:text-ink transition-colors group">
+                High-Quality Prompts Guide <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
         </aside>
 
@@ -327,6 +332,20 @@ export default function TechStackGuidePage() {
                 <h4 className="font-bold text-ink mb-2">Join the Community</h4>
                 <p className="text-sm text-chrome-text-soft">Discord servers and subreddits like r/nextjs or r/webdev are incredibly helpful.</p>
               </div>
+            </div>
+          </section>
+
+          {/* Next Steps */}
+          <section className="space-y-6 pt-16 border-t border-hairline mt-32">
+            <h2 className="text-3xl font-serif text-ink border-b border-hairline pb-4">Ready to Write Prompts Like a Pro?</h2>
+            <div className="bg-chrome-bg/50 border border-hairline rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h4 className="font-bold text-ink mb-2 text-xl">The High-Quality Prompts Guide</h4>
+                <p className="text-chrome-text-soft">Go from "just get something on screen" to shipping a polished, production-ready site with our phase-by-phase prompt engineering guide.</p>
+              </div>
+              <Link href="/tech-stack/prompts" className="px-6 py-3 shrink-0 bg-ink text-paper rounded-full font-bold hover:bg-ink-soft transition-colors flex items-center gap-2 shadow-sm">
+                Read the Guide <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </section>
 
