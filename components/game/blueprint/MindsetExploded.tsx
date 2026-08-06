@@ -117,12 +117,14 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
         
         {NODES.map((node, i) => (
           <div key={node.id} className="min-h-[80px]">
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
               {exploded[node.id] ? (
                 <motion.div 
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
+                  key="exploded"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
                   className="flex gap-3 p-3 md:gap-4 md:p-4 rounded-lg border border-success/20 bg-success/5 items-start"
                 >
                   <div className="mt-0.5 flex-shrink-0">{node.icon}</div>
@@ -136,9 +138,16 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
                   </div>
                 </motion.div>
               ) : (
-                <div className="flex gap-3 p-3 md:gap-4 md:p-4 rounded-lg border border-dashed border-hairline bg-paper items-center justify-center h-full opacity-70">
+                <motion.div 
+                  key="unexploded"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex gap-3 p-3 md:gap-4 md:p-4 rounded-lg border border-dashed border-hairline bg-paper items-center justify-center h-full opacity-70"
+                >
                   <span className="font-mono text-xs text-ink-soft">Explode node {i + 1} to analyze...</span>
-                </div>
+                </motion.div>
               )}
             </AnimatePresence>
           </div>
