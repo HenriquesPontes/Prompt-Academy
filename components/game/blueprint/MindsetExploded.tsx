@@ -81,25 +81,19 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
         
         {/* Node 1 */}
         <span className="relative inline-block mx-1">
-          {!exploded["vague1"] && Object.keys(exploded).length === 0 && (
-            <span className="absolute -top-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce pointer-events-none z-10">
-              <span className="bg-accent text-paper text-[10px] font-mono font-bold px-2 py-0.5 rounded-full shadow-sm whitespace-nowrap">Click me</span>
-              <div className="w-0 h-0 border-l-[4px] border-l-transparent border-t-[4px] border-t-accent border-r-[4px] border-r-transparent" />
-            </span>
-          )}
           <button 
             onClick={() => toggleNode("vague1")}
             className={`px-2 py-0.5 rounded transition-all duration-300 ${
               exploded["vague1"] 
                 ? "bg-success/10 text-success border border-success/30 font-bold" 
-                : "bg-warning/20 text-ink font-semibold border border-warning/50 hover:bg-warning/30 hover:scale-105 cursor-pointer underline decoration-wavy decoration-warning/80"
+                : "bg-warning/20 text-ink font-semibold border border-warning/50 hover:bg-warning/30 hover:scale-105 cursor-pointer underline decoration-wavy decoration-warning/80 animate-pulse shadow-sm"
             }`}
           >
             {exploded["vague1"] ? NODES[0].replacement : NODES[0].trigger}
           </button>
         </span>
         
-        <span>. Please </span>
+        <span>, </span>
         
         {/* Node 2 */}
         <span className="relative inline-block mx-1">
@@ -108,14 +102,14 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
             className={`px-2 py-0.5 rounded transition-all duration-300 ${
               exploded["vague2"] 
                 ? "bg-success/10 text-success border border-success/30 font-bold" 
-                : "bg-warning/20 text-ink font-semibold border border-warning/50 hover:bg-warning/30 hover:scale-105 cursor-pointer underline decoration-wavy decoration-warning/80"
+                : "bg-warning/20 text-ink font-semibold border border-warning/50 hover:bg-warning/30 hover:scale-105 cursor-pointer underline decoration-wavy decoration-warning/80 animate-pulse shadow-sm"
             }`}
           >
             {exploded["vague2"] ? NODES[1].replacement : NODES[1].trigger}
           </button>
         </span>
         
-        <span> and </span>
+        <span>, and </span>
         
         {/* Node 3 */}
         <span className="relative inline-block mx-1">
@@ -124,13 +118,13 @@ export function MindsetExploded({ onComplete }: { onComplete?: () => void }) {
             className={`px-2 py-0.5 rounded transition-all duration-300 ${
               exploded["vague3"] 
                 ? "bg-success/10 text-success border border-success/30 font-bold" 
-                : "bg-warning/20 text-ink font-semibold border border-warning/50 hover:bg-warning/30 hover:scale-105 cursor-pointer underline decoration-wavy decoration-warning/80"
+                : "bg-warning/20 text-ink font-semibold border border-warning/50 hover:bg-warning/30 hover:scale-105 cursor-pointer underline decoration-wavy decoration-warning/80 animate-pulse shadow-sm"
             }`}
           >
             {exploded["vague3"] ? NODES[2].replacement : NODES[2].trigger}
           </button>
         </span>
-        <span>.</span>
+
       </div>
 
       <div className="space-y-4">
