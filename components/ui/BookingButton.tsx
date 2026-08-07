@@ -12,7 +12,9 @@ export function BookingButton({ className }: BookingButtonProps) {
 
   return (
     <a 
-      href="mailto:hello@skribe.com?subject=Booking%20a%20Consultation"
+      href="https://calendly.com/hpontes-31"
+      target="_blank"
+      rel="noopener noreferrer"
       className={finalClassName}
     >
       Book a Call
