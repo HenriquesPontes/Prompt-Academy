@@ -7,42 +7,15 @@ interface BookingButtonProps {
 }
 
 export function BookingButton({ className }: BookingButtonProps) {
-  const [isLoading, setIsLoading] = useState(false);
-
   const defaultClasses = "text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm";
   const finalClassName = className || defaultClasses;
 
-  const handleCheckout = async () => {
-    try {
-      setIsLoading(true);
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-      });
-      
-      const data = await res.json();
-      
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        console.error("No checkout URL returned", data);
-        alert(`Checkout failed: ${data.error || "Unknown error"}`);
-        setIsLoading(false);
-      }
-    } catch (err: any) {
-      console.error("Checkout error:", err);
-      alert(`Checkout error: ${err.message || "Unknown error"}`);
-      setIsLoading(false);
-    }
-  };
-
   return (
-    <button 
-      onClick={handleCheckout} 
-      disabled={isLoading}
-      className={`${finalClassName} ${isLoading ? 'opacity-80 cursor-not-allowed' : ''}`}
+    <a 
+      href="mailto:hello@skribe.com?subject=Booking%20a%20Consultation"
+      className={finalClassName}
     >
-      {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : null}
-      {isLoading ? "Loading..." : "Book a Call"}
-    </button>
+      Book a Call
+    </a>
   );
 }
