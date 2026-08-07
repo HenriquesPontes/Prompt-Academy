@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://skribe.app/",
+      url: "https://promptacademy.com/",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,

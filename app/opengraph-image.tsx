@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Skribe — The markdown writing app for people who build with AI";
+  "Prompt Academy — The Ultimate Vibe Coding Guide";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -12,19 +12,19 @@ export default function OgImage() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#ffffff",
-          color: "#2a2a2a",
+          background: "#0a2947", // Blueprint navy
+          color: "#ffffff", // White text
           padding: "96px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          fontFamily: "serif",
+          fontFamily: "sans-serif",
         }}
       >
         <div
           style={{ fontSize: 36, letterSpacing: "-0.01em", fontWeight: 500 }}
         >
-          Skribe
+          Prompt Academy
         </div>
         <div
           style={{
@@ -35,11 +35,11 @@ export default function OgImage() {
             flexDirection: "column",
           }}
         >
-          <span>Markdown, made beautiful.</span>
-          <span style={{ color: "#5a5a5a" }}>Edited by Claude Code.</span>
+          <span>Master Vibe Coding.</span>
+          <span style={{ color: "#6fd6a8" }}>Build modern software with AI.</span>
         </div>
-        <div style={{ fontSize: 28, color: "#5a5a5a" }}>
-          macOS · Free · Forever
+        <div style={{ fontSize: 28, color: "#f2a93b" }}>
+          By Henrique Pontes
         </div>
       </div>
     ),

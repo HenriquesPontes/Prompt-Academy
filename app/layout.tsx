@@ -14,16 +14,16 @@ const inter = Inter({
 });
 
 const TITLE =
-  "Skribe — The markdown writing app for people who build with AI";
+  "Prompt Academy — The Ultimate Vibe Coding Guide";
 const DESCRIPTION =
-  "A Mac-native markdown editor where Claude Code edits your local documents in real time. Free for Mac — forever.";
+  "Master Vibe Coding and AI-assisted development. From beginner to pro, learn how to build modern software with AI.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://skribe.app"),
-  title: { default: TITLE, template: "%s · Skribe" },
+  metadataBase: new URL("https://promptacademy.com"),
+  title: { default: TITLE, template: "%s · Prompt Academy" },
   description: DESCRIPTION,
   alternates: { canonical: "/" },
-  applicationName: "Skribe",
+  applicationName: "Prompt Academy",
   icons: {
     icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: "/favicon.png",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: "/",
-    siteName: "Skribe",
+    siteName: "Prompt Academy",
     type: "website",
     locale: "en_US",
     images: [{ url: "/meta.png", type: "image/png" }],
@@ -46,16 +46,16 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = { themeColor: "#ffffff" };
+export const viewport: Viewport = { themeColor: "#0a2947" };
 
 const softwareApplicationLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "Skribe",
+  name: "Prompt Academy",
   description: DESCRIPTION,
-  url: "https://skribe.app",
-  applicationCategory: "Productivity",
-  operatingSystem: "macOS 13+",
+  url: "https://promptacademy.com",
+  applicationCategory: "EducationalSoftware",
+  operatingSystem: "Any",
   offers: {
     "@type": "Offer",
     price: "0",
