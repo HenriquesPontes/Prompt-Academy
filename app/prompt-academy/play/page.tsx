@@ -6,7 +6,7 @@ import { ActionPlanReward } from "@/components/game/blueprint/ActionPlanReward";
 import { JargonSidePanel } from "@/components/game/blueprint/JargonSidePanel";
 import { MindsetExploded } from "@/components/game/blueprint/MindsetExploded";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { PenTool, Book } from "lucide-react";
+import { PenTool, Lightbulb } from "lucide-react";
 import Link from "next/link";
 import { BookingButton } from "@/components/ui/BookingButton";
 
@@ -126,9 +126,9 @@ export default function PlayPromptAcademyPage() {
           <BookingButton className="hidden md:flex text-sm font-medium bg-ink text-paper px-4 py-1.5 rounded-full hover:opacity-90 transition-opacity items-center gap-2 shadow-sm" />
           <button 
             onClick={() => setIsGlossaryOpen(true)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-chrome-bg border border-hairline text-sm font-medium hover:bg-accent/10 hover:text-accent transition-colors"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-transparent border border-hairline text-sm font-medium hover:bg-accent/10 hover:text-accent transition-colors"
           >
-            <Book className="w-4 h-4" />
+            <Lightbulb className="w-4 h-4" />
             <span className="hidden md:inline">Cheat Sheet</span>
           </button>
           <div className="w-32 md:w-48 h-3 bg-chrome-bg border border-hairline rounded-full overflow-hidden relative">

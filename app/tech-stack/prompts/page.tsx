@@ -48,11 +48,7 @@ export default function PromptsGuidePage() {
   return (
     <div className="min-h-screen bg-paper text-ink selection:bg-selection">
       {/* Header */}
-      <Header>
-        <Link href="/tech-stack" className="text-sm font-medium text-chrome-text hover:text-ink transition-colors flex items-center gap-2">
-           <ArrowRight className="w-4 h-4 rotate-180" /> Back to Beginner's Guide
-        </Link>
-      </Header>
+      <Header />
 
       <main className="max-w-7xl mx-auto pt-32 pb-32 px-6 flex flex-col lg:flex-row gap-12 relative z-10">
         

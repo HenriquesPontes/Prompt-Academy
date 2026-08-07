@@ -76,7 +76,7 @@ export function ActionPlanReward() {
                 </code>
                 <button
                   onClick={() => copyToClipboard(step.prompt, idx)}
-                  className="absolute top-4 right-4 p-2 bg-paper border border-hairline rounded-md text-ink-soft hover:text-ink hover:border-ink/30 transition-all shadow-sm"
+                  className="absolute top-4 right-4 p-2 bg-transparent border border-hairline rounded-md text-ink-soft hover:text-ink hover:border-ink/30 transition-all shadow-sm"
                   title="Copy to clipboard"
                 >
                   {copied === idx ? <CheckCircle2 className="w-4 h-4 text-success" /> : <Copy className="w-4 h-4" />}
@@ -92,10 +92,10 @@ export function ActionPlanReward() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <Link
-              href="/"
+              href="/tech-stack"
               className="bg-success text-chrome-bg px-8 py-4 rounded-lg font-mono font-bold hover:bg-success/90 transition-all shadow-sm uppercase tracking-wider text-center"
             >
-              Complete Academy & Return
+              Read the Beginner's Guide
             </Link>
             <BookingButton className="bg-chrome-bg border border-hairline text-ink px-8 py-4 rounded-lg font-mono font-bold hover:bg-paper transition-all shadow-sm uppercase tracking-wider text-center flex items-center justify-center gap-2" />
           </div>
