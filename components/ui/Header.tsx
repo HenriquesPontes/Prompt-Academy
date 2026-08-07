@@ -11,7 +11,7 @@ export function Header({ children }: HeaderProps) {
       <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
         <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
       </Link>
-      <div className="flex items-center gap-4 md:gap-6 font-sans">
+      <div className="flex items-center gap-4 md:gap-6">
         {children}
         <BookingButton className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm" />
       </div>

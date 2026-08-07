@@ -115,7 +115,7 @@ export default function PlayPromptAcademyPage() {
   };
 
   return (
-    <div className="min-h-screen bg-paper text-ink selection:bg-selection relative overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-paper text-ink selection:bg-selection relative overflow-x-hidden">
 
       {/* Progress Bar Header */}
       <header className="fixed top-0 left-0 right-0 h-16 z-50 flex items-center px-6 md:px-10 justify-between bg-paper/80 backdrop-blur-md border-b border-hairline">

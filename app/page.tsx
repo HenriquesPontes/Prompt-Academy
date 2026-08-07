@@ -31,7 +31,7 @@ export default function Home() {
                 {/* Simulated Content Area */}
                 <div className="px-4 pt-4 pb-12">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="bg-selection text-success px-3 py-1 rounded-full text-xs font-sans font-medium flex items-center gap-1.5 w-fit">
+                    <div className="bg-selection text-success px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1.5 w-fit">
                       <Terminal className="w-3 h-3" />
                       prompt_academy.md
                     </div>
@@ -73,7 +73,7 @@ export default function Home() {
                }}
                className="absolute top-10 right-4 sm:right-10 w-64 bg-white/75 backdrop-blur-xl rounded-t-xl rounded-b-md border border-hairline border-b-0 shadow-modal p-4 z-10"
              >
-                <div className="flex items-center gap-2 mb-3 text-accent text-sm font-sans font-medium">
+                <div className="flex items-center gap-2 mb-3 text-accent text-sm font-medium">
                   <Sparkles className="w-4 h-4" />
                   Thinking...
                 </div>
@@ -105,7 +105,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="mt-8 max-w-xl font-sans text-lg leading-relaxed text-ink-soft"
+              className="mt-8 max-w-xl text-lg leading-relaxed text-ink-soft"
             >
               Prompt Academy opens a curriculum of best practices and interactive challenges. A calm, step-by-step to master prompt engineering and build like an architect.
             </motion.p>
@@ -118,13 +118,13 @@ export default function Home() {
             >
               <Link 
                 href="/prompt-academy/play"
-                className="bg-ink text-paper px-8 py-4 rounded-full font-sans font-medium hover:bg-ink-soft transition-all inline-flex items-center justify-center gap-3 text-lg shadow-sm w-full sm:w-auto h-14"
+                className="bg-ink text-paper px-8 py-4 rounded-full font-medium hover:bg-ink-soft transition-all inline-flex items-center justify-center gap-3 text-lg shadow-sm w-full sm:w-auto h-14"
               >
                 <PenTool className="w-5 h-5" /> Start the Academy
               </Link>
               <Link 
                 href="/tech-stack"
-                className="px-8 py-4 rounded-full font-sans font-medium border border-hairline text-ink hover:bg-chrome-bg transition-all inline-flex items-center justify-center gap-3 text-lg w-full sm:w-auto h-14"
+                className="px-8 py-4 rounded-full font-medium border border-hairline text-ink hover:bg-chrome-bg transition-all inline-flex items-center justify-center gap-3 text-lg w-full sm:w-auto h-14"
               >
                 Read the Beginner's Guide
               </Link>
@@ -134,7 +134,7 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.5 }}
-              className="mt-6 font-sans text-xs text-chrome-text-soft font-medium tracking-wide"
+              className="mt-6 text-xs text-chrome-text-soft font-medium tracking-wide"
             >
               PLAIN ENGLISH · STEP-BY-STEP · ACTIONABLE PROMPTS
             </motion.p>

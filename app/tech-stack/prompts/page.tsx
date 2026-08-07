@@ -46,7 +46,7 @@ export default function PromptsGuidePage() {
   };
 
   return (
-    <div className="min-h-screen bg-paper text-ink selection:bg-selection font-sans">
+    <div className="min-h-screen bg-paper text-ink selection:bg-selection">
       {/* Header */}
       <Header>
         <Link href="/tech-stack" className="text-sm font-medium text-chrome-text hover:text-ink transition-colors flex items-center gap-2">

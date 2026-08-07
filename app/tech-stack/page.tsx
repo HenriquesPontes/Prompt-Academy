@@ -50,7 +50,7 @@ export default function TechStackGuidePage() {
   };
 
   return (
-    <div className="min-h-screen bg-paper text-ink selection:bg-selection font-sans">
+    <div className="min-h-screen bg-paper text-ink selection:bg-selection">
 
       {/* Header */}
       <Header />
@@ -136,7 +136,7 @@ export default function TechStackGuidePage() {
               </div>
               <div className="flex gap-4">
                 <span className="text-chrome-text-soft w-32 shrink-0">Get this:</span>
-                <span className="font-bold text-accent">bold text</span>
+                <span className="font-bold text-paper">bold text</span>
               </div>
               <div className="h-px bg-chrome-text-soft/30 my-4" />
               <div className="flex gap-4">
@@ -145,7 +145,7 @@ export default function TechStackGuidePage() {
               </div>
               <div className="flex gap-4">
                 <span className="text-chrome-text-soft w-32 shrink-0">Get this:</span>
-                <span className="font-serif text-lg text-accent">Heading</span>
+                <span className="font-serif text-lg text-paper">Heading</span>
               </div>
             </div>
           </section>
