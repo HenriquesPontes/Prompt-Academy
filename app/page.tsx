@@ -71,16 +71,16 @@ export default function Home() {
                  opacity: { duration: 0.8, delay: 0.3 },
                  scale: { duration: 0.8, delay: 0.3 }
                }}
-               className="absolute top-10 right-4 sm:right-10 w-64 bg-white/75 backdrop-blur-xl rounded-t-xl rounded-b-md border border-hairline border-b-0 shadow-modal p-4 z-10"
+               className="absolute top-10 right-4 sm:right-10 w-64 bg-chrome-bg/90 backdrop-blur-xl rounded-t-xl rounded-b-md border border-hairline border-b-0 shadow-modal p-4 z-10"
              >
                 <div className="flex items-center gap-2 mb-3 text-accent text-sm font-medium">
                   <Sparkles className="w-4 h-4" />
                   Thinking...
                 </div>
                 <div className="space-y-2">
-                  <div className="h-2 bg-chrome-bg rounded-full w-full"></div>
-                  <div className="h-2 bg-chrome-bg rounded-full w-5/6"></div>
-                  <div className="h-2 bg-chrome-bg rounded-full w-4/6"></div>
+                  <div className="h-2 bg-hairline rounded-full w-full"></div>
+                  <div className="h-2 bg-hairline rounded-full w-5/6"></div>
+                  <div className="h-2 bg-hairline rounded-full w-4/6"></div>
                 </div>
              </motion.div>
 
