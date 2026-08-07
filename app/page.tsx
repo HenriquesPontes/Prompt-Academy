@@ -20,7 +20,7 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="mx-auto flex min-h-screen w-full max-w-[100rem] items-center px-6 sm:px-10 py-24">
+      <main className="mx-auto flex min-h-screen w-full max-w-[100rem] items-start lg:items-center px-6 sm:px-10 pt-28 pb-16 lg:py-24">
         <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(40rem,1fr)] lg:gap-20 mt-8 lg:mt-0 relative z-10">
           
           {/* Left Column: Visual Area - Animated AI Composer */}
@@ -100,7 +100,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-doc-h1 font-normal tracking-tight leading-[1.15] text-ink md:text-display lg:text-display-md"
+              className="text-4xl font-normal tracking-tight leading-[1.15] text-ink md:text-display lg:text-display-md"
             >
               <span className="block">Prompting, made precise.</span>
               <span className="block mt-2">Built with your mindset.</span>
