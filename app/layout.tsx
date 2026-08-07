@@ -70,7 +70,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-US">
-      <body className={`${inter.variable} ${spaceGrotesk.variable} min-h-screen bg-paper text-ink font-sans antialiased flex flex-col blueprint-grid`}>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} min-h-screen bg-paper text-ink font-sans antialiased flex flex-col`}>
         <div className="flex-1">
           {children}
         </div>
