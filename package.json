@@ -11,13 +11,15 @@
   "dependencies": {
     "@fontsource/ibm-plex-serif": "^5.1.0",
     "@fontsource/jetbrains-mono": "^5.2.8",
+    "@stripe/stripe-js": "^9.13.0",
     "framer-motion": "^13.0.0",
     "geist": "^1.7.1",
     "lucide-react": "^1.29.0",
     "next": "^16.2.6",
     "react": "19.0.0",
     "react-calendly": "^4.4.0",
-    "react-dom": "19.0.0"
+    "react-dom": "19.0.0",
+    "stripe": "^22.4.0"
   },
   "devDependencies": {
     "@types/node": "^22.10.5",
