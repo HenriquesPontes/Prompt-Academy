@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Code, Terminal, Bot, Server, Shield, Layers, Layout, Map, Wrench, Search, FileCode, CheckCircle2, AlertTriangle, ArrowRight, LucideIcon } from "lucide-react";
 import Link from "next/link";
+import { BookingButton } from "@/components/ui/BookingButton";
 
 const SECTIONS = [
   { id: "what-is", title: "1. What is Vibe Coding?" },
@@ -56,14 +57,7 @@ export default function TechStackGuidePage() {
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
         </Link>
-        <Link 
-          href="https://calendly.com/hpontes-31" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm"
-        >
-          Book a Call
-        </Link>
+        <BookingButton className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm" />
       </header>
 
       <main className="max-w-7xl mx-auto pt-32 pb-32 px-6 flex flex-col lg:flex-row gap-12 relative z-10">

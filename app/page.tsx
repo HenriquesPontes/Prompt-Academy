@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PenTool, Terminal, Sparkles, Send, Paperclip } from "lucide-react";
 import * as motion from "framer-motion/client";
+import { BookingButton } from "@/components/ui/BookingButton";
 
 export default function Home() {
   return (
@@ -15,14 +16,7 @@ export default function Home() {
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
         </Link>
-        <Link 
-          href="https://calendly.com/hpontes-31" 
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm"
-        >
-          Book a Call
-        </Link>
+        <BookingButton className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm" />
       </header>
 
       {/* Main Content */}

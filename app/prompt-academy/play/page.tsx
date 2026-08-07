@@ -8,6 +8,7 @@ import { MindsetExploded } from "@/components/game/blueprint/MindsetExploded";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { PenTool, Book } from "lucide-react";
 import Link from "next/link";
+import { BookingButton } from "@/components/ui/BookingButton";
 
 const STAGES: StageData[] = [
   {
@@ -122,14 +123,7 @@ export default function PlayPromptAcademyPage() {
           <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
         </Link>
         <div className="flex items-center gap-4">
-          <Link 
-            href="https://calendly.com/hpontes-31" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:flex text-sm font-medium bg-accent text-paper px-4 py-1.5 rounded-full hover:bg-accent-deep-green transition-colors items-center gap-2 shadow-sm"
-          >
-            Book a Call
-          </Link>
+          <BookingButton className="hidden md:flex text-sm font-medium bg-accent text-paper px-4 py-1.5 rounded-full hover:bg-accent-deep-green transition-colors items-center gap-2 shadow-sm" />
           <button 
             onClick={() => setIsGlossaryOpen(true)}
             className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-chrome-bg border border-hairline text-sm font-medium hover:bg-accent/10 hover:text-accent transition-colors"

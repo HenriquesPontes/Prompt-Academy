@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { CheckCircle2, ArrowRight, Brain, Milestone, TerminalSquare, GitPullRequest, Code2, Layers, CheckSquare, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { BookingButton } from "@/components/ui/BookingButton";
 
 const SECTIONS = [
   { id: "mindset", title: "Phase 0: Mindset Shift" },
@@ -55,14 +56,7 @@ export default function PromptsGuidePage() {
           <Link href="/tech-stack" className="text-sm font-medium text-chrome-text hover:text-ink transition-colors flex items-center gap-2">
              <ArrowRight className="w-4 h-4 rotate-180" /> Back to Beginner's Guide
           </Link>
-          <Link 
-            href="https://calendly.com/hpontes-31" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm"
-          >
-            Book a Call
-          </Link>
+          <BookingButton className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm" />
         </div>
       </header>
 
