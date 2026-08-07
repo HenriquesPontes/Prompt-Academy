@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
+import { Footer } from "@/components/ui/Footer";
 
 const TITLE =
   "Skribe — The markdown writing app for people who build with AI";
@@ -59,8 +60,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en-US" className={GeistSans.variable}>
-      <body className="min-h-screen bg-paper text-ink font-serif antialiased">
-        {children}
+      <body className="min-h-screen bg-paper text-ink font-serif antialiased flex flex-col">
+        <div className="flex-1">
+          {children}
+        </div>
+        <Footer />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
