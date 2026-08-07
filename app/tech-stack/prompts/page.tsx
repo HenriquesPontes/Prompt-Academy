@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { CheckCircle2, ArrowRight, Brain, Milestone, TerminalSquare, GitPullRequest, Code2, Layers, CheckSquare, Sparkles } from "lucide-react";
 import Link from "next/link";
-import { BookingButton } from "@/components/ui/BookingButton";
+import { Header } from "@/components/ui/Header";
 
 const SECTIONS = [
   { id: "mindset", title: "Phase 0: Mindset Shift" },
@@ -48,17 +48,11 @@ export default function PromptsGuidePage() {
   return (
     <div className="min-h-screen bg-paper text-ink selection:bg-selection font-sans">
       {/* Header */}
-      <header className="absolute top-0 left-0 right-0 h-16 z-50 flex items-center px-10 justify-between bg-chrome-bg/80 backdrop-blur-sm border-b border-hairline sticky">
-        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
+      <Header>
+        <Link href="/tech-stack" className="text-sm font-medium text-chrome-text hover:text-ink transition-colors flex items-center gap-2">
+           <ArrowRight className="w-4 h-4 rotate-180" /> Back to Beginner's Guide
         </Link>
-        <div className="flex items-center gap-6">
-          <Link href="/tech-stack" className="text-sm font-medium text-chrome-text hover:text-ink transition-colors flex items-center gap-2">
-             <ArrowRight className="w-4 h-4 rotate-180" /> Back to Beginner's Guide
-          </Link>
-          <BookingButton className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm" />
-        </div>
-      </header>
+      </Header>
 
       <main className="max-w-7xl mx-auto pt-32 pb-32 px-6 flex flex-col lg:flex-row gap-12 relative z-10">
         

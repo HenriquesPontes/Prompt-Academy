@@ -4,6 +4,7 @@ import { InlineWidget } from "react-calendly";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { CheckCircle2, ArrowRight, Loader2, AlertTriangle } from "lucide-react";
+import { Header } from "@/components/ui/Header";
 
 export default function BookingSuccessPage() {
   const [isMounted, setIsMounted] = useState(false);
@@ -43,14 +44,11 @@ export default function BookingSuccessPage() {
 
   return (
     <div className="min-h-screen bg-paper text-ink selection:bg-selection font-sans pt-16 px-4 md:px-10 flex flex-col items-center">
-      <header className="absolute top-0 left-0 right-0 h-16 z-50 flex items-center px-6 md:px-10 justify-between bg-chrome-bg/80 backdrop-blur-sm border-b border-hairline">
-        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
-        </Link>
+      <Header>
         <Link href="/" className="text-sm font-medium text-chrome-text hover:text-ink transition-colors flex items-center gap-2">
            Back Home <ArrowRight className="w-4 h-4" />
         </Link>
-      </header>
+      </Header>
 
       {sessionState === 'loading' && (
         <div className="mt-32 w-full max-w-4xl text-center space-y-4 mb-8 flex flex-col items-center">

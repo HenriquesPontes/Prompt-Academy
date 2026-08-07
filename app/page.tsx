@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { PenTool, Terminal, Sparkles, Send, Paperclip } from "lucide-react";
 import * as motion from "framer-motion/client";
-import { BookingButton } from "@/components/ui/BookingButton";
+import { Header } from "@/components/ui/Header";
 
 export default function Home() {
   return (
@@ -12,12 +12,7 @@ export default function Home() {
       <div className="absolute top-1/4 right-1/4 translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-chrome-bg/30 rounded-full blur-3xl opacity-50 pointer-events-none" />
 
       {/* Navigation Header */}
-      <header className="absolute top-0 left-0 right-0 h-16 z-50 flex items-center px-10 justify-between">
-        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
-        </Link>
-        <BookingButton className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm" />
-      </header>
+      <Header />
 
       {/* Main Content */}
       <main className="mx-auto flex min-h-screen w-full max-w-[100rem] items-start lg:items-center px-6 sm:px-10 pt-28 pb-16 lg:py-24">

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { BookOpen, Code, Terminal, Bot, Server, Shield, Layers, Layout, Map, Wrench, Search, FileCode, CheckCircle2, AlertTriangle, ArrowRight, LucideIcon } from "lucide-react";
 import Link from "next/link";
-import { BookingButton } from "@/components/ui/BookingButton";
+import { Header } from "@/components/ui/Header";
 
 const SECTIONS = [
   { id: "what-is", title: "1. What is Vibe Coding?" },
@@ -53,12 +53,7 @@ export default function TechStackGuidePage() {
     <div className="min-h-screen bg-paper text-ink selection:bg-selection font-sans">
 
       {/* Header */}
-      <header className="absolute top-0 left-0 right-0 h-16 z-50 flex items-center px-10 justify-between">
-        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
-        </Link>
-        <BookingButton className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm" />
-      </header>
+      <Header />
 
       <main className="max-w-7xl mx-auto pt-32 pb-32 px-6 flex flex-col lg:flex-row gap-12 relative z-10">
         
