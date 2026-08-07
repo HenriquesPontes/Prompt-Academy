@@ -25,10 +25,12 @@ export function BookingButton({ className }: BookingButtonProps) {
         window.location.href = data.url;
       } else {
         console.error("No checkout URL returned", data);
+        alert(`Checkout failed: ${data.error || "Unknown error"}`);
         setIsLoading(false);
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error("Checkout error:", err);
+      alert(`Checkout error: ${err.message || "Unknown error"}`);
       setIsLoading(false);
     }
   };
