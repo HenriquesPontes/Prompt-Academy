@@ -51,11 +51,15 @@ export function StageCard({ stage, isUnlocked, onComplete }: Props) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`border-2 rounded-xl p-5 md:p-8 shadow-sm transition-colors ${
-        isCompleted ? "border-success/30 bg-success/5" : "border-ink/10 bg-paper hover:border-ink/20"
+      className={`border-2 border-dashed rounded-xl p-5 md:p-8 shadow-sm transition-colors relative ${
+        isCompleted ? "border-success/50 bg-success/5" : "border-hairline bg-paper hover:border-chrome-text-soft"
       }`}
     >
-      <div className="flex items-center justify-between mb-6 pb-4 border-b border-dashed border-hairline">
+      <div className="absolute top-0 right-0 px-3 py-1 bg-chrome-bg border-l border-b border-dashed border-hairline rounded-bl-lg rounded-tr-xl font-mono text-[10px] tracking-widest text-chrome-text-soft">
+        REV 0{stage.id}
+      </div>
+
+      <div className="flex items-center justify-between mb-6 pb-4 border-b border-dashed border-hairline pr-16">
         <h2 className="text-2xl font-serif text-accent font-medium">
           Stage {stage.id} — {stage.title}
         </h2>

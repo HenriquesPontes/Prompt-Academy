@@ -1,13 +1,10 @@
 ---
-version: alpha
-name: Skribe
-description: Current design system for a Mac-native markdown writing app where Claude Code edits local documents in real time.
+version: 2.0.0
+name: Skribe (Blueprint Edition)
+description: Design system for Skribe and Prompt Academy, utilizing an "Architect's Blueprint" aesthetic. A prompt is a spec, not a wish.
 source_of_truth:
-  tokens: src/styles/tokens.css
   tailwind: tailwind.config.ts
-  app_shell: src/components/chrome/AppShell.tsx
-  editor: src/components/editor/Editor.tsx
-  ai_composer: src/components/ai/AIInputBar.tsx
+  global_css: app/globals.css
 ---
 
 # Skribe Design System
@@ -15,45 +12,36 @@ source_of_truth:
 ## Color Tokens
 
 ```yaml
-paper: "#FAF7F2"
-ink: "#2A2A2A"
-ink-soft: "#5A5A5A"
-chrome-bg: "#F2EEE6"
-chrome-text: "#3D3D3D"
-chrome-text-soft: "#7A7A7A"
-hairline: "#E4DFD4"
-accent: "#1E2A3A"
-accent-deep-green: "#2D5F4A"
-accent-warm: "#B8732A"
-selection: "#D6E4D8"
-highlight: "#EFE8D8"
-overlay: "#2A2A2A66"
-success: "#2D5F4A"
-warning: "#8B5A1E"
-error: "#8B2D2A"
-ai-surface: "#FFFFFF"
-ai-reference-bg: "#E8F3FF"
-ai-reference-text: "#1F5D88"
-ai-reference-hover: "#CFE8FF"
-ai-reference-ring: "#7DBDEB"
-submit: "#000000"
-submit-hover: "#1F1F1F"
+paper: "#0a2947" # Blueprint Navy base background
+ink: "#ffffff" # White text for contrast against navy
+ink-soft: "#a0b5c9" # Lighter blue/grey for secondary text
+chrome-bg: "#071b30" # Darker ink for recessed panels and spec sheets
+chrome-text: "#ffffff"
+chrome-text-soft: "#8ba1b6"
+hairline: "rgba(255,255,255,0.15)" # Faint white for dashed lines/borders
+accent: "#f2a93b" # Amber for interactive/active elements
+accent-deep-green: "#e09825"
+accent-warm: "#f2a93b"
+selection: "rgba(242, 169, 59, 0.2)"
+highlight: "#123759"
+success: "#6fd6a8" # Mint green for approved/correct states
+warning: "#f2a93b"
+error: "#ef6f5c" # Coral for wrong/error states
 ```
 
-`paper` is the document and app background. `chrome-bg` is the left navigation and preflight banner. `ink`, `ink-soft`, `chrome-text`, and `chrome-text-soft` define the text hierarchy. `hairline` is the default divider and border color.
+The app completely inverts typical "light mode" aesthetics. The base is `paper` (Blueprint Navy), covered by a faint white grid (`.blueprint-grid` in `globals.css`). 
+`chrome-bg` is used for panels that act as "spec sheets" or "drafts". 
 
-`accent` defaults to deep ink and drives primary buttons, focus, active document state, links, drag rings, spinners, and important controls. The settings modal can switch it to deep green by setting `:root[data-accent='deep-green']`. Always use the `accent` token for interactive color unless a component intentionally needs a fixed semantic color.
+Color carries meaning, not decoration. `accent` (Amber) is used for any interactive elements, hovering, or unlocked states. `success` (Mint Green) is used exclusively for "APPROVED" or "CORRECT" states, while `error` (Coral) is reserved for invalid inputs or mistakes.
 
-`accent-warm` is reserved for unsaved-file dots. `selection` is browser text selection and the selected-text chip in the AI composer. `highlight` is the hover/active wash used in the file tree, inline code background, attachment chips, and quiet badges. Semantic colors are intentionally aged so they sit inside the editorial palette.
-
-The current app also uses a small set of non-tokenized AI colors: pure white surfaces for the floating composer, stream preview, and mention menu; black for the circular submit button; and a pale blue pair for document reference chips. Keep these localized to AI reference/composer UI until they are promoted to formal tokens.
+`hairline` is heavily utilized alongside `border-dashed` to create measurement lines, spec boundaries, and cut-outs.
 
 ## Typography
 
 ```yaml
-font-editor: "IBM Plex Serif, Iowan Old Style, Georgia, serif"
-font-ui: "IBM Plex Serif, Iowan Old Style, Georgia, serif"
-font-mono: "IBM Plex Mono, SF Mono, Menlo, monospace"
+font-sans: "var(--font-inter), sans-serif"
+font-serif: "var(--font-space-grotesk), sans-serif"
+font-mono: "IBM Plex Mono, JetBrains Mono, monospace"
 
 text-xs: 0.75rem
 text-sm: 0.875rem
@@ -63,17 +51,13 @@ text-doc-h3: 1.375rem
 text-doc-h2: 1.625rem
 text-doc-h1: 2.125rem
 text-display: 3rem
-
-leading-tight: 1.25
-leading-normal: 1.5
-leading-relaxed: 1.7
 ```
 
-IBM Plex Serif is used for both the editor and the UI. IBM Plex Mono is used for inline code and code blocks. The app imports Plex Serif weights 400, 400 italic, 500, 600, 700 and Plex Mono weights 400 and 600 from `@fontsource`.
+- **Inter (`font-sans`)**: Body copy. Stays out of the way, clean and readable.
+- **Space Grotesk (`font-serif`)**: Headings and titles. Provides a geometric, slightly technical drafted feel.
+- **IBM Plex Mono (`font-mono`)**: Used extensively for code, prompt text, labels, revision tags (e.g., `REV 01`), and anything that represents "the actual prompt".
 
-The global body enables `kern`, `liga`, and `onum`. Letter spacing is normally `0`; do not bring back the old negative display tracking. Small uppercase labels may add positive tracking when needed, as the empty-state recent-folder label currently does.
-
-The editor default is 18px text with 1.7 line height, but users can choose 14, 16, 18, or 20px and line heights 1.5, 1.7, or 1.9. Design work should tolerate all of those settings without text overlap.
+The global body enables `kern`, `liga`, and `onum`. Letter spacing is normally `0`. Small uppercase labels may add positive tracking (`tracking-widest`) when needed, especially in revision tags or rubber stamps.
 
 ## Spacing, Radius, Motion
 

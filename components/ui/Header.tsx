@@ -13,7 +13,7 @@ export function Header({ children }: HeaderProps) {
       </Link>
       <div className="flex items-center gap-4 md:gap-6">
         {children}
-        <BookingButton className="text-sm font-medium bg-accent text-paper px-4 py-2 rounded-full hover:bg-accent-deep-green transition-colors flex items-center gap-2 shadow-sm" />
+        <BookingButton className="text-sm font-medium bg-ink text-paper px-4 py-2 rounded-full hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm" />
       </div>
     </header>
   );

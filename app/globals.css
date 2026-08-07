@@ -1,8 +1,5 @@
-@import "@fontsource/ibm-plex-serif/400.css";
-@import "@fontsource/ibm-plex-serif/400-italic.css";
-@import "@fontsource/ibm-plex-serif/500.css";
-@import "@fontsource/ibm-plex-serif/600.css";
-@import "@fontsource/ibm-plex-serif/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
 @import "@fontsource/jetbrains-mono/400.css";
 @import "@fontsource/jetbrains-mono/500.css";
 
@@ -10,18 +7,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --paper: #ffffff;
-  --ink: #2a2a2a;
-  --ink-soft: #5a5a5a;
-  --chrome-bg: #f2eee6;
-  --chrome-text: #3d3d3d;
-  --chrome-text-soft: #7a7a7a;
-  --hairline: #e4dfd4;
-  --accent: #1e2a3a;
-  --highlight: #efe8d8;
-  --submit: #000000;
-  --submit-hover: #1f1f1f;
+.blueprint-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
 html {

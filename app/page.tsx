@@ -118,7 +118,7 @@ export default function Home() {
             >
               <Link 
                 href="/prompt-academy/play"
-                className="bg-ink text-paper px-8 py-4 rounded-full font-medium hover:bg-ink-soft transition-all inline-flex items-center justify-center gap-3 text-lg shadow-sm w-full sm:w-auto h-14"
+                className="bg-accent text-paper px-8 py-4 rounded-full font-medium hover:bg-accent-deep-green transition-all inline-flex items-center justify-center gap-3 text-lg shadow-sm w-full sm:w-auto h-14"
               >
                 <PenTool className="w-5 h-5" /> Start the Academy
               </Link>

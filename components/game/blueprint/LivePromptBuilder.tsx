@@ -72,7 +72,7 @@ export function LivePromptBuilder({ onComplete }: { onComplete: () => void }) {
   const isComplete = progress === BLOCKS.length;
 
   const generatedPrompt = useMemo(() => {
-    return BLOCKS.map(b => selections[b.id] ? `[${b.label}] ${selections[b.id]}` : `[${b.label}] _`)
+    return BLOCKS.map(b => selections[b.id] ? `${b.label.toUpperCase()}:\n${selections[b.id]}` : `${b.label.toUpperCase()}:\n_`)
       .join("\n\n");
   }, [selections]);
 
@@ -84,8 +84,11 @@ export function LivePromptBuilder({ onComplete }: { onComplete: () => void }) {
   };
 
   return (
-    <div className="border-2 border-hairline bg-paper rounded-xl p-5 md:p-8 shadow-sm">
-      <div className="text-center mb-8 md:mb-10 pb-6 border-b border-dashed border-hairline relative overflow-hidden">
+    <div className="border-2 border-dashed border-hairline bg-paper rounded-xl p-5 md:p-8 shadow-sm relative">
+      <div className="absolute top-0 right-0 px-3 py-1 bg-chrome-bg border-l border-b border-dashed border-hairline rounded-bl-lg rounded-tr-xl font-mono text-[10px] tracking-widest text-chrome-text-soft">
+        REV 05
+      </div>
+      <div className="text-center mb-8 md:mb-10 pb-6 border-b border-dashed border-hairline relative overflow-hidden pr-12 md:pr-16">
         <h2 className="text-3xl font-serif text-accent mb-3 flex items-center justify-center gap-3">
           <Terminal className="text-warning w-8 h-8" /> Final Boss: The Compiler
         </h2>
@@ -142,35 +145,30 @@ export function LivePromptBuilder({ onComplete }: { onComplete: () => void }) {
           </div>
         </div>
 
-        {/* Right Side: Terminal Preview */}
+        {/* Right Side: Spec Preview */}
         <div className="flex flex-col h-full">
           <span className="font-mono text-sm font-semibold uppercase tracking-wider text-ink-soft mb-4 flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-success animate-pulse" /> Live Terminal
+            <div className="w-2 h-2 rounded-full bg-accent animate-pulse" /> Live Spec Document
           </span>
           
-          <div className="relative flex-1 bg-ink text-chrome-bg rounded-lg p-6 font-mono text-sm whitespace-pre-wrap leading-relaxed shadow-doc overflow-hidden">
-            {/* CRT Scanline effect */}
-            <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100%_4px] pointer-events-none z-10 opacity-20" />
-            
+          <div className="relative flex-1 bg-chrome-bg text-ink border-2 border-dashed border-hairline rounded-lg p-6 font-mono text-sm whitespace-pre-wrap leading-relaxed shadow-sm overflow-hidden">
             <div className="relative z-20">
-              <span className="text-success mr-2">{'>'}</span><span className="text-paper opacity-70">Initializing prompt compiler...</span>
-              <br/><br/>
               {isCompiling ? (
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-warning animate-pulse"
+                  className="text-accent animate-pulse"
                 >
-                  [SYSTEM] Compiling spec parameters...
+                  [SYSTEM] Finalizing spec parameters...
                   <br/>
-                  [SYSTEM] Executing neural bridge...
+                  [SYSTEM] Verifying constraints...
                   <br/>
-                  [SYSTEM] 100% SUCCESS. Payload ready.
+                  [SYSTEM] 100% SUCCESS. Spec ready for execution.
                 </motion.div>
               ) : (
-                <div className={`${isComplete ? 'text-success font-semibold' : 'text-paper opacity-90'}`}>
+                <div className={`${isComplete ? 'text-success font-semibold' : 'text-ink opacity-90'}`}>
                   {generatedPrompt}
-                  {!isComplete && <span className="animate-pulse ml-1 inline-block w-2 h-4 bg-paper" />}
+                  {!isComplete && <span className="animate-pulse ml-1 inline-block w-2 h-4 bg-accent" />}
                 </div>
               )}
             </div>
@@ -189,9 +187,9 @@ export function LivePromptBuilder({ onComplete }: { onComplete: () => void }) {
               className="bg-accent text-paper px-8 py-4 rounded-lg font-mono font-medium hover:bg-accent-deep-green transition-all inline-flex items-center gap-2 shadow-sm disabled:cursor-not-allowed uppercase tracking-wider overflow-hidden relative group"
             >
               {isCompiling ? (
-                <span className="animate-pulse">Compiling...</span>
+                <span className="animate-pulse">Finalizing...</span>
               ) : (
-                <>Compile & Unlock <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></>
+                <>Approve Spec <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></>
               )}
             </motion.button>
           </div>

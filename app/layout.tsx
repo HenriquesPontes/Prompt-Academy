@@ -1,7 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { GeistSans } from "geist/font/sans";
+import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/ui/Footer";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 const TITLE =
   "Skribe — The markdown writing app for people who build with AI";
@@ -59,8 +69,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-US" className={GeistSans.variable}>
-      <body className="min-h-screen bg-paper text-ink font-serif antialiased flex flex-col">
+    <html lang="en-US">
+      <body className={`${inter.variable} ${spaceGrotesk.variable} min-h-screen bg-paper text-ink font-sans antialiased flex flex-col blueprint-grid`}>
         <div className="flex-1">
           {children}
         </div>

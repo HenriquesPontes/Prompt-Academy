@@ -123,7 +123,7 @@ export default function PlayPromptAcademyPage() {
           <span className="font-serif font-medium text-xl tracking-wide text-ink">Skribe</span>
         </Link>
         <div className="flex items-center gap-4">
-          <BookingButton className="hidden md:flex text-sm font-medium bg-accent text-paper px-4 py-1.5 rounded-full hover:bg-accent-deep-green transition-colors items-center gap-2 shadow-sm" />
+          <BookingButton className="hidden md:flex text-sm font-medium bg-ink text-paper px-4 py-1.5 rounded-full hover:opacity-90 transition-opacity items-center gap-2 shadow-sm" />
           <button 
             onClick={() => setIsGlossaryOpen(true)}
             className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-chrome-bg border border-hairline text-sm font-medium hover:bg-accent/10 hover:text-accent transition-colors"
@@ -152,10 +152,12 @@ export default function PlayPromptAcademyPage() {
           
           {/* Stage 0: Mindset Shift (Exploded) */}
           <div className="relative">
-            <div className="absolute -left-12 top-10 w-6 h-6 rounded-full border-2 hidden md:flex items-center justify-center bg-paper z-10 transition-colors duration-500"
-                 style={{ borderColor: '#2D5F4A' }}>
-              <div className="w-2 h-2 rounded-full transition-colors duration-500"
-                   style={{ backgroundColor: mindsetCompleted ? '#2D5F4A' : 'transparent' }} />
+            <div className={`absolute -left-[3.25rem] top-6 w-12 h-12 rounded-full border-2 border-dashed hidden md:flex flex-col items-center justify-center bg-paper z-10 transition-colors duration-500 font-mono ${mindsetCompleted ? 'border-success text-success bg-success/10' : 'border-accent text-accent'}`}>
+              {mindsetCompleted ? (
+                <span className="text-[0.5rem] font-bold tracking-widest leading-none -rotate-12">APP-<br/>ROVED</span>
+              ) : (
+                <span className="text-sm">00</span>
+              )}
             </div>
             <MindsetExploded onComplete={() => setMindsetCompleted(true)} />
           </div>
@@ -163,11 +165,13 @@ export default function PlayPromptAcademyPage() {
           {/* Standard Stages */}
           {mindsetCompleted && STAGES.map((stage, idx) => (
             <div key={stage.id} className="relative">
-              {/* Timeline dot */}
-              <div className="absolute -left-12 top-10 w-6 h-6 rounded-full border-2 hidden md:flex items-center justify-center bg-paper z-10 transition-colors duration-500"
-                   style={{ borderColor: idx <= unlockedStage ? '#2D5F4A' : '#E5E5E5' }}>
-                <div className="w-2 h-2 rounded-full transition-colors duration-500"
-                     style={{ backgroundColor: idx < unlockedStage || (idx === unlockedStage && challengeUnlocked) ? '#2D5F4A' : 'transparent' }} />
+              {/* Timeline rubber stamp */}
+              <div className={`absolute -left-[3.25rem] top-6 w-12 h-12 rounded-full border-2 border-dashed hidden md:flex flex-col items-center justify-center bg-paper z-10 transition-colors duration-500 font-mono ${idx < unlockedStage || (idx === unlockedStage && challengeUnlocked) ? 'border-success text-success bg-success/10' : idx === unlockedStage ? 'border-accent text-accent' : 'border-chrome-text-soft text-chrome-text-soft'}`}>
+                {idx < unlockedStage || (idx === unlockedStage && challengeUnlocked) ? (
+                  <span className="text-[0.5rem] font-bold tracking-widest leading-none -rotate-12">APP-<br/>ROVED</span>
+                ) : (
+                  <span className="text-sm">0{idx + 1}</span>
+                )}
               </div>
 
               <StageCard 
@@ -186,10 +190,12 @@ export default function PlayPromptAcademyPage() {
             animate={{ opacity: 1, y: 0 }}
             className="mt-16 md:mt-24 pt-12 md:pt-16 border-t-2 border-dashed border-hairline relative pl-0 md:pl-12"
           >
-             <div className="absolute -left-12 top-24 w-6 h-6 rounded-full border-2 hidden md:flex items-center justify-center bg-paper z-10 transition-colors duration-500"
-                   style={{ borderColor: '#2D5F4A' }}>
-                <div className="w-2 h-2 rounded-full transition-colors duration-500"
-                     style={{ backgroundColor: rewardUnlocked ? '#2D5F4A' : 'transparent' }} />
+             <div className={`absolute -left-[3.25rem] top-24 w-12 h-12 rounded-full border-2 border-dashed hidden md:flex flex-col items-center justify-center bg-paper z-10 transition-colors duration-500 font-mono ${rewardUnlocked ? 'border-success text-success bg-success/10' : 'border-accent text-accent'}`}>
+                {rewardUnlocked ? (
+                  <span className="text-[0.5rem] font-bold tracking-widest leading-none -rotate-12">APP-<br/>ROVED</span>
+                ) : (
+                  <span className="text-sm">05</span>
+                )}
               </div>
             <LivePromptBuilder onComplete={() => setRewardUnlocked(true)} />
           </motion.div>

@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { Hammer, Copy, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
+import Link from "next/link";
+import { BookingButton } from "@/components/ui/BookingButton";
 
 export function ActionPlanReward() {
   const [copied, setCopied] = useState<number | null>(null);
@@ -44,25 +46,27 @@ export function ActionPlanReward() {
     <motion.div
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="bg-accent text-paper rounded-xl p-8 shadow-doc mt-12 relative overflow-hidden"
+      className="bg-chrome-bg border-2 border-dashed border-success text-ink rounded-xl p-8 shadow-sm mt-12 relative overflow-hidden"
     >
-      <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-        <Hammer className="w-64 h-64" />
+      <div className="absolute top-12 right-12 opacity-5 pointer-events-none rotate-12">
+        <div className="text-6xl md:text-8xl font-bold font-mono text-success border-8 border-success p-6 rounded-xl">
+          APPROVED
+        </div>
       </div>
 
       <div className="relative z-10">
-        <h2 className="text-3xl font-serif mb-4 flex items-center gap-3">
-          <CheckCircle2 className="w-8 h-8 text-success" />
+        <h2 className="text-3xl font-serif mb-4 flex items-center gap-3 text-success">
+          <CheckCircle2 className="w-8 h-8" />
           You Are Ready to Build
         </h2>
-        <p className="font-mono text-paper/80 mb-10 max-w-2xl leading-relaxed">
+        <p className="font-mono text-ink-soft mb-10 max-w-2xl leading-relaxed">
           You've mastered the blueprint mindset. Instead of a certificate, here is your first action plan. 
           Use this exact 5-step prompt sequence to build your first website right now. Copy them one by one into your AI assistant.
         </p>
 
         <div className="space-y-6">
           {steps.map((step, idx) => (
-            <div key={idx} className="bg-paper text-ink rounded-lg p-6 border-l-4 border-success">
+            <div key={idx} className="bg-paper text-ink rounded-lg p-6 border-l-4 border-dashed border-success relative shadow-sm">
               <h3 className="font-bold font-serif text-lg mb-1">{step.title}</h3>
               <p className="font-mono text-xs text-chrome-text-soft mb-4">{step.desc}</p>
               
@@ -82,10 +86,19 @@ export function ActionPlanReward() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="font-mono text-paper/70">
+        <div className="mt-12 flex flex-col items-center gap-6">
+          <p className="font-mono text-ink-soft text-center">
             Open your editor, start a new chat, and paste Step 1.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <Link
+              href="/"
+              className="bg-success text-chrome-bg px-8 py-4 rounded-lg font-mono font-bold hover:bg-success/90 transition-all shadow-sm uppercase tracking-wider text-center"
+            >
+              Complete Academy & Return
+            </Link>
+            <BookingButton className="bg-chrome-bg border border-hairline text-ink px-8 py-4 rounded-lg font-mono font-bold hover:bg-paper transition-all shadow-sm uppercase tracking-wider text-center flex items-center justify-center gap-2" />
+          </div>
         </div>
       </div>
     </motion.div>
